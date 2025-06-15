@@ -14,12 +14,23 @@ namespace SpotPriceParser
   {
     private static readonly IReadOnlySet<string> ourAllowedSizes = new HashSet<string>
       {
-        "r5d.large", "r5dn.large", "i3en.large",
-        "m6id.large", "m6idn.large", "r6id.large", "r6idn.large", "i4i.large",
-        "r6id.2xlarge", "r6idn.2xlarge", "i4i.2xlarge",
+        "r5d.large", "r5dn.large",
+        "i3en.large",
+        
+        "m6id.large", "r6id.large",
+        "m6idn.large", "r6idn.large",
+        "i4i.large",
+        
         "m7gd.large", "r7gd.large",
+        "m8gd.large", "r8gd.large",
+        "i8g.large",
+
+        "r6id.2xlarge", "r6idn.2xlarge",
+        "i4i.2xlarge",
+        
         "c7gd.2xlarge", "m7gd.2xlarge",
-        "i8g.large"
+        "c8gd.2xlarge", "m8gd.2xlarge",
+        "i8g.2xlarge"
       };
 
     private static readonly IReadOnlyDictionary<string, string> ourAllowedRegions = new Dictionary<string, string>
@@ -126,10 +137,10 @@ namespace SpotPriceParser
       {
         var xp = new AwsEc2Parts(x);
         var yp = new AwsEc2Parts(y);
-        var res = xp.Generation.CompareTo(yp.Generation);
+        var res = string.Compare(xp.Size, yp.Size, StringComparison.InvariantCulture);
         if (res != 0)
           return res;
-        res = string.Compare(xp.Series, yp.Series, StringComparison.InvariantCulture);
+        res = xp.Generation.CompareTo(yp.Generation);
         if (res != 0)
           return res;
         res = string.Compare(xp.Series, yp.Series, StringComparison.InvariantCulture);
@@ -138,7 +149,7 @@ namespace SpotPriceParser
         res = string.Compare(xp.Options, yp.Options, StringComparison.InvariantCulture);
         if (res != 0)
           return res;
-        return string.Compare(xp.Size, yp.Size, StringComparison.InvariantCulture);
+        return 0;
       });
 
     private static readonly IReadOnlyDictionary<string, string> ourColumns = new Dictionary<string, string>
