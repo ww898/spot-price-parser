@@ -28,8 +28,8 @@ namespace SpotPriceParser
         "r6id.2xlarge", "r6idn.2xlarge",
         "i4i.2xlarge",
         
-        "c7gd.2xlarge", "m7gd.2xlarge",
-        "c8gd.2xlarge", "m8gd.2xlarge",
+        "c7gd.2xlarge", "m7gd.2xlarge", "r7gd.2xlarge",
+        "c8gd.2xlarge", "m8gd.2xlarge", "r8gd.2xlarge",
         "i8g.2xlarge"
       };
 
