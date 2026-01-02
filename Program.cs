@@ -24,6 +24,15 @@ namespace SpotPriceParser
         "m7gd.large", "r7gd.large",
         "m8gd.large", "r8gd.large",
         "i8g.large",
+        
+        "i4i.xlarge",
+        "m5dn.xlarge", // Intel Xeon Platinum 8259CL 2.5GHz Turbo:3.5GHz SingleThread:1948, 4 vCPUs, 16.0 GiB, 150 GB NVMe SSD
+        "m5d.xlarge",
+        "m5ad.xlarge", // AMD EPYC 7571 2.1GHz Turbo:2.9GHz SingleThread:1934, 4 vCPUs, 16.0 GiB, 150 GB NVMe SSD
+        "c5ad.xlarge", // AMD EPYC 7R32 2.8GHz Turbo:3.3Ghz SingleThread:1925, 4 vCPUs, 8.0 GiB, 150 GB NVMe SSD
+        "c6id.xlarge",
+        "m6id.xlarge",
+        "c5d.xlarge", // 100 GB NVMe SSD - it's smaller than others
 
         "r6id.2xlarge", "r6idn.2xlarge",
         "i4i.2xlarge",
